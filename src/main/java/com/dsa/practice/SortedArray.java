@@ -2,8 +2,8 @@ package com.dsa.practice;
 
 public class SortedArray {
 	public static void main(String[]args) {
-		int[][] matrix = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
-		int[] res = findIndex(matrix, 11);
+		int[][] matrix = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16,17}};
+		int[] res = findIndex(matrix, 17);
 		System.out.println(res[0]+" "+res[1]);
 		
 	}
@@ -18,7 +18,7 @@ public class SortedArray {
 		int rEnd = matrix.length-1;
 		int cMid = col/2;
 		int rMid =0;
-		while(rStart<=rEnd) {
+		while(rStart<rEnd-1) {
 			rMid = (rStart+rEnd)/2;
 			if(matrix[rMid][cMid] == target) {
 				return new int[] {rMid,cMid};
@@ -38,7 +38,7 @@ public class SortedArray {
 		return res;
 		
 	}
-	private static int[] BinarySearch(int[][] matrix, int row, int rEnd, int rStart, int target) {
+	private static int[] BinarySearch(int[][] matrix, int row, int rStart, int rEnd, int target) {
 		int mid =0;
 		while(rStart<=rEnd) {
 			mid =rStart+(rEnd-rStart)/2;
